@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <style>
+    /* General Styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+
+    header {
+            background-color: #1870f5;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            margin-left: 80px;
+        }
+
+        .logo i {
+            color: white;
+        }
+
+        
+        .navbar ul {
+            list-style: none;
+            display: flex; /* Enables flexbox layout */
+            justify-content: center; /* Centers items horizontally */
+            gap: 100px;
+            margin-left: 370px;
+           
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+    main {
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 30px;
+    }
+
+    /* Dashboard Card Styles */
+    .dashboard-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-card h2 {
+      font-size: 1.9em;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .dashboard-card p {
+      font-size: 1.1em;
+      margin: 10px 0;
+      color: #666;
+    }
+
+    .dashboard-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      background-color: #f7f9fc;
+    }
+
+    .dashboard-card .icon {
+      font-size: 3em;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .dashboard-card:hover .icon {
+      transform: scale(1.1);
+    }
+
+    /* Section Colors */
+    .life-insurance .icon { color: #17a2b8; }
+    .health-insurance .icon { color: #28a745; }
+    .vehicle-insurance .icon { color: #ffc107; }
+    .home-insurance .icon { color: #dc3545; }
+
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #1870f5;
+      color: white;
+      margin-top: 40px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dashboard-card {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="logo"><i class="fa-solid fa-heart-pulse"></i>ONLINE<br> INSURANCE</h1>
+      <ul>
+          <li><a href="agentavailability.html">AgentAvailability</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          
+          <li><a href="custappoint.html">Appointments</a></li>
+          
+          <li><a href="services.html">About Us</a></li>
+          
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </div>
+  </header>
+  
+  <main>
+    <div class="dashboard-card life-insurance">
+      <div class="icon"><i class="fas fa-heart"></i></div>
+      <h2>Life Insurance</h2>
+      <p>Policies: 500</p>
+      <p>Claims: 30</p>
+    </div>
+    
+    <div class="dashboard-card health-insurance">
+      <div class="icon"><i class="fas fa-hospital"></i></div>
+      <h2>Health Insurance</h2>
+      <p>Policies: 300</p>
+      <p>Claims: 25</p>
+    </div>
+    
+    <div class="dashboard-card vehicle-insurance">
+      <div class="icon"><i class="fas fa-car"></i></div>
+      <h2>Vehicle Insurance</h2>
+      <p>Policies: 400</p>
+      <p>Claims: 50</p>
+    </div>
+
+    <div class="dashboard-card home-insurance">
+      <div class="icon"><i class="fas fa-home"></i></div>
+      <h2>Home Insurance</h2>
+      <p>Policies: 200</p>
+      <p>Claims: 15</p>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Insurance Management System</p>
+  </footer>
+</body>
+</html>

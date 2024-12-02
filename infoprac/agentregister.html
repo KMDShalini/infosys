@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Insurance</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fffbea;
+        }
+
+        header {
+            background-color: #1870f5;
+            padding: 20px;
+        }
+
+        .logo {
+            display: inline-block;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 80px;
+        }
+        
+        .logo i{
+            color: white;
+        }
+        .navbar ul {
+            list-style: none;
+            float: right;
+            margin-top: 20px;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            margin-left: 20px;
+            margin-right: 70px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .form-section, .contact-section {
+            width: 45%;
+            background-color: transparent;
+            padding: 20px;
+            
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #1870f5;
+            margin-bottom: 10px;
+            margin-left: 120px;
+            padding: 20px;
+        }
+        h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            margin-top: 40px;   
+            color: black;   
+            
+        }
+
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        i{
+            color: #1870f5;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #1870f5;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        form textarea {
+            height: 100px;
+        }
+
+        button {
+            background-color: #1870f5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1870f5;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .contact-section ul li {
+            margin-bottom: 10px;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin-top: 20px; 
+        }
+        .social-media a {
+            display: inline-block;
+            margin-right: 10px;
+            
+            color: #1870f5;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+        .account {
+            margin-top: 20px;
+            margin-left: 350px;
+    text-align: right;
+    color: #1870f5;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <h1 class="logo"><i class="fa-solid fa-heart-pulse"></i>ONLINE<br> INSURANCE</h1>
+            
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-section">
+            <h2>Agent Registration</h2>
+            <p>Fill out all required fields to send a message. Please don't spam, Thank you!</p>
+            <form id="registrationForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            
+           
+            <input type="email" id="email" name="email" placeholder="Your Email" required 
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                   title="Email must be in lowercase and should follow the proper format (e.g., example@example.com)">
+            
+            
+            <input type="password" id="password" name="password" placeholder="Password" required
+                   pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}" 
+                   title="Password must be at least 8 characters long, contain one uppercase letter, one digit, and one special character.">
+
+            
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            <input type="text" id="policy" name="policy" placeholder="Policy Name" required>
+            
+            
+            
+
+            <button type="submit">Register</button>
+            <a href="agentlogin.html" class="account">Already have an Account?</a>
+        </form>
+
+        
+        <p id="message" class="error"></p>
+            
+        </div>
+        <script>
+            
+            document.getElementById('email').addEventListener('input', function() {
+                this.value = this.value.toLowerCase();
+            });
+    
+           
+            document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                const name = document.getElementById('name').value;
+                const username = document.getElementById('username').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const policy = document.getElementById('policy').value;
+                
+    
+                let message = '';
+    
+                if (password !== confirmPassword) {
+                message = "Passwords do not match.";
+                }
+                else if (name.length < 3) {
+                    message = "Name must be at least 3 characters long.";
+                } else if (username.length < 3) {
+                    message = "Username must be at least 3 characters long.";
+                } 
+                
+                const messageElement = document.getElementById('message');
+                if (message) {
+                    messageElement.textContent = message;
+                    messageElement.style.color = 'red';  // Change text color to red for error messages
+                } else {
+                    messageElement.textContent = 'Registration successful!';
+                    messageElement.style.color = 'green';  // Change text color to green for success message
+                    
+                    // Only redirect if validation passes
+                    window.location.href = 'agentlogin.html';
+                }
+            });
+        </script>
+        <div class="contact-section">
+            <h2>Contact Information</h2>
+            <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+            <ul>
+                <li><i class="fa-solid fa-home"></i> Hebal</li>
+                <li><i class="fa-solid fa-phone"></i> 1800.30.2000</li>
+                <li><i class="fa-solid fa-envelope"></i> info@Online Insurance.com</li>
+            </ul>
+            <h4>Social Media</h4>
+            <div class="social-media">
+                
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

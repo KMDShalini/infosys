@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Subscription</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+
+    form input[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Online Insurance Subscription</h2>
+  </header>
+  <div class="image-container"></div>
+  <div class="container">
+    <form id="subscriptionForm" action="/subscribe" method="POST" onsubmit="showSuccessMessage(event)">
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="insurancePlan">Select Insurance Plan:</label><br>
+      <select id="insurancePlan" name="insurancePlan" required>
+        <option value="" disabled selected>-- Select a Plan --</option>
+        <option value="Gold">Gold Insurance</option>
+        <option value="Silver">Silver Insurance</option>
+        <option value="Bronze">Bronze Insurance</option>
+      </select><br><br>
+
+      <label for="insurancePlan">Select Insurance type:</label><br>
+      <select id="insurancePlan" name="insurancePlan" required>
+        <option value="" disabled selected>-- Insurance type --</option>
+        <option value="health">Health Insurance</option>
+        <option value="life">Life Insurance</option>
+        <option value="auto">Auto Insurance</option>
+      </select><br><br>
+
+      <label for="duration">Subscription Duration (in years):</label><br>
+      <input type="number" id="duration" name="duration" min="1" max="10" required><br><br>
+
+      <input type="submit" value="Subscribe">
+    </form>
+  </div>
+
+  <script>
+    function showSuccessMessage(event) {
+      event.preventDefault(); // Prevent the form from submitting in the usual way
+      alert("Submission successful!"); // Display the success message
+      // Optionally, here you could actually submit the form if needed using:
+      // event.target.submit();
+    }
+  </script>
+
+</body>
+</html>

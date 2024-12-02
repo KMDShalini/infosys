@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Appointments</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #1870f5;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            margin-left: 80px;
+        }
+
+        
+        .logo i{
+            color: white;
+        }
+    /* Table container */
+    .container {
+      margin: 100px auto;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #004085;
+      padding: 15px;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px 15px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    td {
+      background-color: #fff;
+    }
+    .cancel-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cancel-btn:hover {
+            background-color: #c82333;
+        }
+    /* Cancel button */
+    
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header>
+  <h1 class="logo"><i class="fa-solid fa-heart-pulse"></i>ONLINE<br> INSURANCE</h1>
+    
+</header>
+<div class="container">
+  <h2>Your Upcoming Appointments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        
+        <th>Customer Name</th>
+        
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>18-11-2024</td>
+        <td>05:20 PM</td>
+        
+        
+        <td>Customer 1</td>
+        <td><button class="cancel-btn" onclick="cancelAppointment()">Cancel</button></td>
+      </tr>
+      <tr>
+        <td>22-11-2024</td>
+        <td>08:40 PM</td>
+        
+        
+        <td>Customer 2</td>
+        <td><button class="cancel-btn" onclick="cancelAppointment()">Cancel</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
